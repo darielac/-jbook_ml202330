@@ -1,0 +1,3241 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>FRAUD PROBLEM &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'parcialml_classification';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="WIND SPEED PROBLEM" href="parcialml_regression.html" />
+    <link rel="prev" title="Parcial Machine Learning" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Parcial Machine Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">FRAUD PROBLEM</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="parcialml_regression.html">WIND SPEED PROBLEM</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fparcialml_classification.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/parcialml_classification.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FRAUD PROBLEM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FRAUD PROBLEM</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge">RIDGE</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lasso">LASSO</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">NAIVE BAYES</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#xgboost">XGBOOST</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mlp">MLP</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">RidgeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span><span class="p">,</span> <span class="n">StratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_vif</span><span class="p">(</span><span class="n">df_test</span><span class="p">,</span> <span class="n">var_names</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">df_test</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+
+            <span class="n">y</span> <span class="o">=</span> <span class="n">df_test</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df_test</span><span class="p">[</span><span class="n">df_test</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">var</span><span class="p">])</span>
+            
+            <span class="n">r_squared</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">vif</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">r_squared</span><span class="p">)</span>
+            
+            <span class="n">cols_drop</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vif</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vif&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;vif&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;vif &gt;= 5&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;index&#39;</span><span class="p">])</span>
+            
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols_drop</span><span class="p">)</span> <span class="o">&gt;</span>  <span class="mi">0</span><span class="p">:</span>
+                <span class="n">cols_drop_df</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">cols_drop</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">, Columnas a eliminar: </span><span class="si">{</span><span class="n">cols_drop_df</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">df_test</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">cols_drop_df</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">df_test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="fraud-problem">
+<h1>FRAUD PROBLEM<a class="headerlink" href="#fraud-problem" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_identity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train_identity.csv&#39;</span><span class="p">)</span>
+<span class="n">df_transaction</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train_transaction.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_15444</span><span class="o">/</span><span class="mf">4275418521.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_identity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train_identity.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_transaction</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train_transaction.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">~\miniconda3\envs\ml_venv\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="ne">--&gt; </span><span class="mi">948</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span> 
+<span class="g g-Whitespace">    </span><span class="mi">950</span> 
+
+<span class="nn">~\miniconda3\envs\ml_venv\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">609</span> 
+<span class="g g-Whitespace">    </span><span class="mi">610</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">611</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span> 
+<span class="g g-Whitespace">    </span><span class="mi">613</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">~\miniconda3\envs\ml_venv\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1446</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1448</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~\miniconda3\envs\ml_venv\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1703</span>                 <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1704</span>                     <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1705</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1706</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1707</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">~\miniconda3\envs\ml_venv\lib\site-packages\pandas\io\common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>         <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">863</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>                 <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span>                 <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;train_identity.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_transaction</span><span class="p">,</span> <span class="n">df_identity</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;TransactionID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(590540, 434)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TransactionID</th>
+      <th>isFraud</th>
+      <th>TransactionDT</th>
+      <th>TransactionAmt</th>
+      <th>ProductCD</th>
+      <th>card1</th>
+      <th>card2</th>
+      <th>card3</th>
+      <th>card4</th>
+      <th>card5</th>
+      <th>...</th>
+      <th>id_31</th>
+      <th>id_32</th>
+      <th>id_33</th>
+      <th>id_34</th>
+      <th>id_35</th>
+      <th>id_36</th>
+      <th>id_37</th>
+      <th>id_38</th>
+      <th>DeviceType</th>
+      <th>DeviceInfo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2987000</td>
+      <td>0</td>
+      <td>86400</td>
+      <td>68.50</td>
+      <td>W</td>
+      <td>13926</td>
+      <td>NaN</td>
+      <td>150.0</td>
+      <td>discover</td>
+      <td>142.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2987001</td>
+      <td>0</td>
+      <td>86401</td>
+      <td>29.00</td>
+      <td>W</td>
+      <td>2755</td>
+      <td>404.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>102.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2987002</td>
+      <td>0</td>
+      <td>86469</td>
+      <td>59.00</td>
+      <td>W</td>
+      <td>4663</td>
+      <td>490.0</td>
+      <td>150.0</td>
+      <td>visa</td>
+      <td>166.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2987003</td>
+      <td>0</td>
+      <td>86499</td>
+      <td>50.00</td>
+      <td>W</td>
+      <td>18132</td>
+      <td>567.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>117.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2987004</td>
+      <td>0</td>
+      <td>86506</td>
+      <td>50.00</td>
+      <td>H</td>
+      <td>4497</td>
+      <td>514.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>102.0</td>
+      <td>...</td>
+      <td>samsung browser 6.2</td>
+      <td>32.0</td>
+      <td>2220x1080</td>
+      <td>match_status:2</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>mobile</td>
+      <td>SAMSUNG SM-G892A Build/NRD90M</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>590535</th>
+      <td>3577535</td>
+      <td>0</td>
+      <td>15811047</td>
+      <td>49.00</td>
+      <td>W</td>
+      <td>6550</td>
+      <td>NaN</td>
+      <td>150.0</td>
+      <td>visa</td>
+      <td>226.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>590536</th>
+      <td>3577536</td>
+      <td>0</td>
+      <td>15811049</td>
+      <td>39.50</td>
+      <td>W</td>
+      <td>10444</td>
+      <td>225.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>224.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>590537</th>
+      <td>3577537</td>
+      <td>0</td>
+      <td>15811079</td>
+      <td>30.95</td>
+      <td>W</td>
+      <td>12037</td>
+      <td>595.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>224.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>590538</th>
+      <td>3577538</td>
+      <td>0</td>
+      <td>15811088</td>
+      <td>117.00</td>
+      <td>W</td>
+      <td>7826</td>
+      <td>481.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>224.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>590539</th>
+      <td>3577539</td>
+      <td>0</td>
+      <td>15811131</td>
+      <td>279.95</td>
+      <td>W</td>
+      <td>15066</td>
+      <td>170.0</td>
+      <td>150.0</td>
+      <td>mastercard</td>
+      <td>102.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>590540 rows × 434 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TransactionID       int64
+isFraud             int64
+TransactionDT       int64
+TransactionAmt    float64
+ProductCD          object
+                   ...   
+id_36              object
+id_37              object
+id_38              object
+DeviceType         object
+DeviceInfo         object
+Length: 434, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>TransactionDT: Intervalo de tiempo a partir de una fecha y hora de referencia.</p>
+<p>TransactionAMT: Importe del pago de la transacción en USD.</p>
+<p>ProductCD: Código de producto, el producto de cada transacción.</p>
+<p>card1 - card6 : Información de la tarjeta de pago, como tipo de tarjeta, categoría de tarjeta, banco emisor, país, etc.</p>
+<p>addr : Dirección</p>
+<p>dist: Distancia</p>
+<p>P_ and (R_) emaildomain: Dominio de correo electrónico del comprador y del destinatario.</p>
+<p>C1-C14 : Recuento, cuántas direcciones se encuentran asociadas a la tarjeta de pago, etc. El significado real está codificado.</p>
+<p>D1-D15 : Intervalo de tiempo, como los días transcurridos entre la transacción anterior, etc.</p>
+<p>M1-M9 : Coinciden, como los nombres en la tarjeta y la dirección, etc.</p>
+<p>Vxxx : Vesta ofrece una gran variedad de funciones, como la clasificación, el recuento y otras relaciones entre entidades.</p>
+<p>DeviceType: Codificada. Información de identidad o conexión de red (IP, ISP, Proxy, etc) o firma digital.</p>
+<p>DeviceInfo: Codificada. Información de identidad o conexión de red (IP, ISP, Proxy, etc) o firma digital.</p>
+<p>id_12 - id_38 : Codificada. Información de identidad o conexión de red (IP, ISP, Proxy, etc) o firma digital.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts_nan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_full</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;nan_values&#39;</span><span class="p">]),</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="n">df_full</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_full</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;perct_nan_values&#39;</span><span class="p">])],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;perct_nan_values&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">counts_nan</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nan_values</th>
+      <th>perct_nan_values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>id_24</th>
+      <td>585793</td>
+      <td>99.196159</td>
+    </tr>
+    <tr>
+      <th>id_25</th>
+      <td>585408</td>
+      <td>99.130965</td>
+    </tr>
+    <tr>
+      <th>id_07</th>
+      <td>585385</td>
+      <td>99.127070</td>
+    </tr>
+    <tr>
+      <th>id_08</th>
+      <td>585385</td>
+      <td>99.127070</td>
+    </tr>
+    <tr>
+      <th>id_21</th>
+      <td>585381</td>
+      <td>99.126393</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>C3</th>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>C2</th>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>C1</th>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>isFraud</th>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>TransactionID</th>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>434 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot percentaje of nan values per column</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">counts_nan</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">counts_nan</span><span class="p">[</span><span class="s1">&#39;perct_nan_values&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5f60d929fd90386a7eb8cf02e7391091daa42ba213cba0fbb561d5dd9cbfe500.png" src="_images/5f60d929fd90386a7eb8cf02e7391091daa42ba213cba0fbb561d5dd9cbfe500.png" />
+</div>
+</div>
+<p>Se puede ver que existen muchas columnas con muchos valores nulos, esto se puede deber a que cuando se hace el merge ‘left’, hay muchos id que aparecen en una base de datos pero en la otra no, tenemos que lidiar con estos valores nulos para poder utilizar modelos de machine learning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fraud&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts Fraud&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/270f9c991610b1673fb9578bbcde21e79e6f56ab6c7627f05ed70d2029a3f45a.png" src="_images/270f9c991610b1673fb9578bbcde21e79e6f56ab6c7627f05ed70d2029a3f45a.png" />
+</div>
+</div>
+<p>Se puede ver que es una base de datos desbalanceada porque hay mucho mas datos de la clase 0 que de la clase 1, esto puede afectar los resultados del modelo a nivel de precision al detectar cada clase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eda_num_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TransactionDT&#39;</span><span class="p">,</span> <span class="s1">&#39;TransactionAmt&#39;</span><span class="p">,</span> <span class="s1">&#39;card1&#39;</span><span class="p">]</span>
+<span class="n">eda_cat_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ProductCD&#39;</span><span class="p">,</span> <span class="s1">&#39;card4&#39;</span><span class="p">,</span> <span class="s1">&#39;card6&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eba48f257e762e5984ef0b83fd073bc9c34b764b721c2db70b8123bd130b90f1.png" src="_images/eba48f257e762e5984ef0b83fd073bc9c34b764b721c2db70b8123bd130b90f1.png" />
+</div>
+</div>
+<p>En las variables TransactionDT, y Card 1, no se evidencian datos atipicos en el boxplot, por otro lado para la variable Transaction Amt se ven muchos valores atipicos e incluso uno muy alejado de la escala de los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;isFraud&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_full</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7a68e4fb76e28e4acb556c1e6a60bc98d34f89fdaf900f828f777d8a3956720c.png" src="_images/7a68e4fb76e28e4acb556c1e6a60bc98d34f89fdaf900f828f777d8a3956720c.png" />
+</div>
+</div>
+<p>La distribucion de estas variables para cada clase tiene comportamientos similares, y los valores atipicos que veiamos en el boxplot para la variable TransactionAmt se pueden ver aca que hacen parte de la clase 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;isFraud&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">col</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_full</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dc0150efcf5c7aa0c9f932f6d8a7ec35124cd6c2ed394fd8d509c59feee46d8e.png" src="_images/dc0150efcf5c7aa0c9f932f6d8a7ec35124cd6c2ed394fd8d509c59feee46d8e.png" />
+</div>
+</div>
+<p>Con este boxplot podemos ver la dispersion de estas variables con respecto a la variable respuesta. En TransactionAmt se ven valores atipicos en las dos clases y en las otras variables no se evidencian valores atipicos. En la variable TransactionDT se ve por las clases diferencia ligera en la mediana y en la variable card1 no se logra ver una diferencia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b06dce0f4f0b4115c0f3cca4d2f245e79689a9fb21b60390c36107f8fe210a5b.png" src="_images/b06dce0f4f0b4115c0f3cca4d2f245e79689a9fb21b60390c36107f8fe210a5b.png" />
+</div>
+</div>
+<p>En este histograma de las variables se puede ver que las variables TransactionDT y card1 son uniformes, y la variable TransactionAmt tiene un sesgo a la derecha.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">eda_cat_cols</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eda_cat_cols</span><span class="p">):</span>
+    <span class="n">crosstab_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">])</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">crosstab_result</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6715cc375df869344b318d4e57b0c75b96a5ffc7b11f6d7496133f7b6aacfc82.png" src="_images/6715cc375df869344b318d4e57b0c75b96a5ffc7b11f6d7496133f7b6aacfc82.png" />
+</div>
+</div>
+<p>En estos diagramas de barras de estas variables categoricas, se puede ver cuales son las categorias mas frecuentes por clase. Muchas tarjetas visa, debito y product W.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+            <span class="c1"># Si es la misma variable en ambas dimensiones, crea un histograma en su lugar</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="n">eda_num_cols</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Si son variables diferentes, crea un gráfico de dispersión</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="n">eda_num_cols</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">df_full</span><span class="p">[</span><span class="n">eda_num_cols</span><span class="p">[</span><span class="n">j</span><span class="p">]],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">eda_num_cols</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cdb7d342917d4ba78c788fe5e1401217140265e5260a38f766e8298da1d99cf2.png" src="_images/cdb7d342917d4ba78c788fe5e1401217140265e5260a38f766e8298da1d99cf2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TransactionID</th>
+      <th>isFraud</th>
+      <th>TransactionDT</th>
+      <th>TransactionAmt</th>
+      <th>card1</th>
+      <th>card2</th>
+      <th>card3</th>
+      <th>card5</th>
+      <th>addr1</th>
+      <th>addr2</th>
+      <th>...</th>
+      <th>id_17</th>
+      <th>id_18</th>
+      <th>id_19</th>
+      <th>id_20</th>
+      <th>id_21</th>
+      <th>id_22</th>
+      <th>id_24</th>
+      <th>id_25</th>
+      <th>id_26</th>
+      <th>id_32</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5.905400e+05</td>
+      <td>590540.000000</td>
+      <td>5.905400e+05</td>
+      <td>590540.000000</td>
+      <td>590540.000000</td>
+      <td>581607.000000</td>
+      <td>588975.000000</td>
+      <td>586281.000000</td>
+      <td>524834.000000</td>
+      <td>524834.000000</td>
+      <td>...</td>
+      <td>139369.000000</td>
+      <td>45113.000000</td>
+      <td>139318.000000</td>
+      <td>139261.000000</td>
+      <td>5159.000000</td>
+      <td>5169.000000</td>
+      <td>4747.000000</td>
+      <td>5132.000000</td>
+      <td>5163.000000</td>
+      <td>77586.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.282270e+06</td>
+      <td>0.034990</td>
+      <td>7.372311e+06</td>
+      <td>135.027176</td>
+      <td>9898.734658</td>
+      <td>362.555488</td>
+      <td>153.194925</td>
+      <td>199.278897</td>
+      <td>290.733794</td>
+      <td>86.800630</td>
+      <td>...</td>
+      <td>189.451377</td>
+      <td>14.237337</td>
+      <td>353.128174</td>
+      <td>403.882666</td>
+      <td>368.269820</td>
+      <td>16.002708</td>
+      <td>12.800927</td>
+      <td>329.608924</td>
+      <td>149.070308</td>
+      <td>26.508597</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.704744e+05</td>
+      <td>0.183755</td>
+      <td>4.617224e+06</td>
+      <td>239.162522</td>
+      <td>4901.170153</td>
+      <td>157.793246</td>
+      <td>11.336444</td>
+      <td>41.244453</td>
+      <td>101.741072</td>
+      <td>2.690623</td>
+      <td>...</td>
+      <td>30.375360</td>
+      <td>1.561302</td>
+      <td>141.095343</td>
+      <td>152.160327</td>
+      <td>198.847038</td>
+      <td>6.897665</td>
+      <td>2.372447</td>
+      <td>97.461089</td>
+      <td>32.101995</td>
+      <td>3.737502</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.987000e+06</td>
+      <td>0.000000</td>
+      <td>8.640000e+04</td>
+      <td>0.251000</td>
+      <td>1000.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>10.000000</td>
+      <td>...</td>
+      <td>100.000000</td>
+      <td>10.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>10.000000</td>
+      <td>11.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.134635e+06</td>
+      <td>0.000000</td>
+      <td>3.027058e+06</td>
+      <td>43.321000</td>
+      <td>6019.000000</td>
+      <td>214.000000</td>
+      <td>150.000000</td>
+      <td>166.000000</td>
+      <td>204.000000</td>
+      <td>87.000000</td>
+      <td>...</td>
+      <td>166.000000</td>
+      <td>13.000000</td>
+      <td>266.000000</td>
+      <td>256.000000</td>
+      <td>252.000000</td>
+      <td>14.000000</td>
+      <td>11.000000</td>
+      <td>321.000000</td>
+      <td>119.000000</td>
+      <td>24.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.282270e+06</td>
+      <td>0.000000</td>
+      <td>7.306528e+06</td>
+      <td>68.769000</td>
+      <td>9678.000000</td>
+      <td>361.000000</td>
+      <td>150.000000</td>
+      <td>226.000000</td>
+      <td>299.000000</td>
+      <td>87.000000</td>
+      <td>...</td>
+      <td>166.000000</td>
+      <td>15.000000</td>
+      <td>341.000000</td>
+      <td>472.000000</td>
+      <td>252.000000</td>
+      <td>14.000000</td>
+      <td>11.000000</td>
+      <td>321.000000</td>
+      <td>149.000000</td>
+      <td>24.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.429904e+06</td>
+      <td>0.000000</td>
+      <td>1.124662e+07</td>
+      <td>125.000000</td>
+      <td>14184.000000</td>
+      <td>512.000000</td>
+      <td>150.000000</td>
+      <td>226.000000</td>
+      <td>330.000000</td>
+      <td>87.000000</td>
+      <td>...</td>
+      <td>225.000000</td>
+      <td>15.000000</td>
+      <td>427.000000</td>
+      <td>533.000000</td>
+      <td>486.500000</td>
+      <td>14.000000</td>
+      <td>15.000000</td>
+      <td>371.000000</td>
+      <td>169.000000</td>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>3.577539e+06</td>
+      <td>1.000000</td>
+      <td>1.581113e+07</td>
+      <td>31937.391000</td>
+      <td>18396.000000</td>
+      <td>600.000000</td>
+      <td>231.000000</td>
+      <td>237.000000</td>
+      <td>540.000000</td>
+      <td>102.000000</td>
+      <td>...</td>
+      <td>229.000000</td>
+      <td>29.000000</td>
+      <td>671.000000</td>
+      <td>661.000000</td>
+      <td>854.000000</td>
+      <td>44.000000</td>
+      <td>26.000000</td>
+      <td>548.000000</td>
+      <td>216.000000</td>
+      <td>32.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 403 columns</p>
+</div></div></div>
+</div>
+<p>Aca podemos ver como se relacionan las variables y sacar indicadores numericos de las variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">missing_perc</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_full</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_full</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">cols_drop</span> <span class="o">=</span> <span class="n">missing_perc</span><span class="p">[</span><span class="n">missing_perc</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+<span class="n">cols_drop</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;dist2&#39;, &#39;D7&#39;, &#39;id_07&#39;, &#39;id_08&#39;, &#39;id_18&#39;, &#39;id_21&#39;, &#39;id_22&#39;, &#39;id_23&#39;,
+       &#39;id_24&#39;, &#39;id_25&#39;, &#39;id_26&#39;, &#39;id_27&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cols_drop</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(590540, 422)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Empezaamos con el manejo de los datos nulos, eliminando las variables que tienen mas del 90% de sus datos nulos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">object_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_full</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">object_cols</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ProductCD&#39;,
+ &#39;card4&#39;,
+ &#39;card6&#39;,
+ &#39;P_emaildomain&#39;,
+ &#39;R_emaildomain&#39;,
+ &#39;M1&#39;,
+ &#39;M2&#39;,
+ &#39;M3&#39;,
+ &#39;M4&#39;,
+ &#39;M5&#39;,
+ &#39;M6&#39;,
+ &#39;M7&#39;,
+ &#39;M8&#39;,
+ &#39;M9&#39;,
+ &#39;id_12&#39;,
+ &#39;id_15&#39;,
+ &#39;id_16&#39;,
+ &#39;id_28&#39;,
+ &#39;id_29&#39;,
+ &#39;id_30&#39;,
+ &#39;id_31&#39;,
+ &#39;id_33&#39;,
+ &#39;id_34&#39;,
+ &#39;id_35&#39;,
+ &#39;id_36&#39;,
+ &#39;id_37&#39;,
+ &#39;id_38&#39;,
+ &#39;DeviceType&#39;,
+ &#39;DeviceInfo&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imputer_cat</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">)</span>
+<span class="n">df_full_cat</span> <span class="o">=</span> <span class="n">df_full</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
+<span class="n">df_full_cat</span> <span class="o">=</span> <span class="n">imputer_cat</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_full_cat</span><span class="p">)</span>
+<span class="n">df_full_cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_full_cat</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_full</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># One Hot Encoding</span>
+
+<span class="n">ohe</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="n">df_full_cat</span> <span class="o">=</span>  <span class="n">ohe</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_full_cat</span><span class="p">)</span>
+<span class="n">object_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_full</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">df_full_cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_full_cat</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">ohe</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">(</span><span class="n">object_cols</span><span class="p">))</span>
+
+<span class="n">df_full_cat</span><span class="p">[</span><span class="s1">&#39;TransactionID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;TransactionID&#39;</span><span class="p">]</span>
+<span class="n">df_full_cat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\coold\miniconda3\envs\ml_venv\lib\site-packages\sklearn\preprocessing\_encoders.py:972: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ProductCD_H</th>
+      <th>ProductCD_R</th>
+      <th>ProductCD_S</th>
+      <th>ProductCD_W</th>
+      <th>card4_discover</th>
+      <th>card4_mastercard</th>
+      <th>card4_visa</th>
+      <th>card6_credit</th>
+      <th>card6_debit</th>
+      <th>card6_debit or credit</th>
+      <th>...</th>
+      <th>DeviceInfo_verykoolS5524</th>
+      <th>DeviceInfo_verykoolS5525</th>
+      <th>DeviceInfo_verykoolS5530 Build/LMY47I</th>
+      <th>DeviceInfo_verykools4009</th>
+      <th>DeviceInfo_verykools5004</th>
+      <th>DeviceInfo_verykools5034</th>
+      <th>DeviceInfo_verykools5035</th>
+      <th>DeviceInfo_vivo</th>
+      <th>DeviceInfo_xs-Z47b7VqTMxs</th>
+      <th>TransactionID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2987000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2987001</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2987002</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2987003</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2987004</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>590535</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3577535</td>
+    </tr>
+    <tr>
+      <th>590536</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3577536</td>
+    </tr>
+    <tr>
+      <th>590537</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3577537</td>
+    </tr>
+    <tr>
+      <th>590538</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3577538</td>
+    </tr>
+    <tr>
+      <th>590539</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3577539</td>
+    </tr>
+  </tbody>
+</table>
+<p>590540 rows × 2402 columns</p>
+</div></div></div>
+</div>
+<p>Para las variables categorias imputamos los valores faltantes usando la estrategia ‘most_frequent’ y se aplica OneHotEncoding para transformar las variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imputer_num</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="n">df_full_num</span> <span class="o">=</span> <span class="n">df_full</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span>
+<span class="n">df_full_num</span> <span class="o">=</span> <span class="n">df_full_num</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TransactionID&#39;</span><span class="p">,</span> <span class="s1">&#39;isFraud&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_full_num</span> <span class="o">=</span> <span class="n">imputer_num</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_full_num</span><span class="p">)</span>
+<span class="n">df_full_num</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_full_num</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_full</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Apply VIF</span>
+<span class="n">df_full_num</span> <span class="o">=</span> <span class="n">apply_vif</span><span class="p">(</span><span class="n">df_full_num</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">df_full_num</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_full_num</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TransactionAmt, Columnas a eliminar: [&#39;V246&#39;, &#39;V37&#39;, &#39;V61&#39;]
+card1, Columnas a eliminar: [&#39;V204&#39;]
+card2, Columnas a eliminar: [&#39;V63&#39;, &#39;V192&#39;, &#39;V124&#39;, &#39;V227&#39;]
+card3, Columnas a eliminar: [&#39;V50&#39;, &#39;V236&#39;, &#39;V88&#39;, &#39;V21&#39;, &#39;V261&#39;]
+card5, Columnas a eliminar: [&#39;V168&#39;, &#39;V24&#39;, &#39;V247&#39;, &#39;V120&#39;, &#39;V95&#39;, &#39;V138&#39;, &#39;V22&#39;, &#39;V321&#39;]
+addr1, Columnas a eliminar: [&#39;V225&#39;, &#39;V25&#39;, &#39;V171&#39;, &#39;V325&#39;, &#39;V257&#39;, &#39;V219&#39;, &#39;V289&#39;]
+addr2, Columnas a eliminar: [&#39;V93&#39;]
+dist1, Columnas a eliminar: [&#39;C11&#39;, &#39;V186&#39;, &#39;V280&#39;, &#39;V146&#39;, &#39;V34&#39;, &#39;V31&#39;]
+C1, Columnas a eliminar: [&#39;V166&#39;, &#39;V304&#39;, &#39;V235&#39;]
+C2, Columnas a eliminar: [&#39;V13&#39;, &#39;V194&#39;, &#39;V87&#39;, &#39;V296&#39;, &#39;V112&#39;, &#39;C1&#39;, &#39;V77&#39;]
+C4, Columnas a eliminar: [&#39;V51&#39;]
+C5, Columnas a eliminar: [&#39;V86&#39;, &#39;V117&#39;, &#39;V141&#39;]
+C6, Columnas a eliminar: [&#39;V67&#39;, &#39;V57&#39;, &#39;V14&#39;]
+C7, Columnas a eliminar: [&#39;V329&#39;]
+C8, Columnas a eliminar: [&#39;V39&#39;, &#39;V71&#39;, &#39;V156&#39;, &#39;V180&#39;]
+C10, Columnas a eliminar: [&#39;V83&#39;, &#39;V30&#39;, &#39;V199&#39;, &#39;V115&#39;, &#39;V175&#39;, &#39;V122&#39;, &#39;V103&#39;]
+C12, Columnas a eliminar: [&#39;V110&#39;, &#39;V49&#39;]
+C13, Columnas a eliminar: [&#39;V137&#39;, &#39;V80&#39;, &#39;V66&#39;, &#39;V60&#39;, &#39;V165&#39;, &#39;C10&#39;]
+D1, Columnas a eliminar: [&#39;V181&#39;, &#39;V282&#39;, &#39;D1&#39;, &#39;V179&#39;, &#39;V79&#39;, &#39;id_10&#39;]
+D2, Columnas a eliminar: [&#39;V105&#39;, &#39;V36&#39;]
+D3, Columnas a eliminar: [&#39;V43&#39;, &#39;V243&#39;, &#39;V6&#39;, &#39;V230&#39;]
+D4, Columnas a eliminar: [&#39;C12&#39;, &#39;V322&#39;, &#39;V139&#39;, &#39;V228&#39;, &#39;V190&#39;, &#39;C9&#39;, &#39;V169&#39;, &#39;V258&#39;]
+D5, Columnas a eliminar: [&#39;V15&#39;, &#39;V231&#39;]
+D6, Columnas a eliminar: [&#39;V82&#39;, &#39;V323&#39;, &#39;V19&#39;, &#39;V9&#39;, &#39;V288&#39;, &#39;D11&#39;, &#39;V32&#39;, &#39;V224&#39;]
+D8, Columnas a eliminar: [&#39;V53&#39;, &#39;V188&#39;, &#39;V324&#39;]
+D10, Columnas a eliminar: [&#39;V221&#39;, &#39;V220&#39;, &#39;V187&#39;, &#39;V291&#39;, &#39;V253&#39;]
+D12, Columnas a eliminar: [&#39;V89&#39;, &#39;V245&#39;, &#39;V300&#39;]
+D13, Columnas a eliminar: [&#39;V240&#39;, &#39;V218&#39;, &#39;V176&#39;, &#39;V12&#39;, &#39;V84&#39;, &#39;V217&#39;, &#39;id_06&#39;, &#39;V239&#39;]
+D14, Columnas a eliminar: [&#39;V123&#39;, &#39;V320&#39;, &#39;V297&#39;, &#39;V102&#39;]
+D15, Columnas a eliminar: [&#39;V94&#39;]
+V3, Columnas a eliminar: [&#39;V2&#39;]
+V4, Columnas a eliminar: [&#39;V4&#39;]
+V10, Columnas a eliminar: [&#39;V10&#39;]
+V17, Columnas a eliminar: [&#39;V17&#39;]
+V27, Columnas a eliminar: [&#39;V27&#39;]
+V35, Columnas a eliminar: [&#39;V303&#39;]
+V44, Columnas a eliminar: [&#39;V45&#39;]
+V47, Columnas a eliminar: [&#39;V46&#39;]
+V56, Columnas a eliminar: [&#39;V56&#39;, &#39;V55&#39;]
+V70, Columnas a eliminar: [&#39;V69&#39;]
+V72, Columnas a eliminar: [&#39;V58&#39;]
+V74, Columnas a eliminar: [&#39;V73&#39;]
+V76, Columnas a eliminar: [&#39;V75&#39;]
+V78, Columnas a eliminar: [&#39;V81&#39;]
+V91, Columnas a eliminar: [&#39;V90&#39;]
+V97, Columnas a eliminar: [&#39;V104&#39;, &#39;V100&#39;]
+V99, Columnas a eliminar: [&#39;V98&#39;]
+V109, Columnas a eliminar: [&#39;V108&#39;]
+V113, Columnas a eliminar: [&#39;V111&#39;]
+V118, Columnas a eliminar: [&#39;V118&#39;]
+V125, Columnas a eliminar: [&#39;V116&#39;]
+V126, Columnas a eliminar: [&#39;V134&#39;, &#39;V155&#39;]
+V127, Columnas a eliminar: [&#39;V132&#39;, &#39;V272&#39;, &#39;V126&#39;, &#39;V263&#39;, &#39;isFraud&#39;, &#39;V145&#39;, &#39;V18&#39;, &#39;V229&#39;, &#39;V319&#39;]
+V128, Columnas a eliminar: [&#39;V285&#39;, &#39;V281&#39;, &#39;V130&#39;, &#39;V183&#39;, &#39;V173&#39;, &#39;V266&#39;]
+V129, Columnas a eliminar: [&#39;V184&#39;, &#39;V216&#39;, &#39;V318&#39;]
+V131, Columnas a eliminar: [&#39;V26&#39;, &#39;V317&#39;]
+V133, Columnas a eliminar: [&#39;V195&#39;, &#39;V265&#39;]
+V135, Columnas a eliminar: [&#39;V256&#39;, &#39;V35&#39;, &#39;V142&#39;]
+V136, Columnas a eliminar: [&#39;V62&#39;, &#39;V78&#39;]
+V140, Columnas a eliminar: [&#39;V144&#39;]
+V148, Columnas a eliminar: [&#39;V148&#39;]
+V150, Columnas a eliminar: [&#39;V42&#39;, &#39;V113&#39;, &#39;V23&#39;, &#39;V72&#39;, &#39;V198&#39;, &#39;V222&#39;]
+V152, Columnas a eliminar: [&#39;V248&#39;, &#39;V251&#39;, &#39;V249&#39;, &#39;V147&#39;]
+V154, Columnas a eliminar: [&#39;V153&#39;]
+V157, Columnas a eliminar: [&#39;V157&#39;]
+V160, Columnas a eliminar: [&#39;V310&#39;, &#39;V312&#39;, &#39;V316&#39;]
+V161, Columnas a eliminar: [&#39;V193&#39;, &#39;V162&#39;]
+V163, Columnas a eliminar: [&#39;V85&#39;]
+V164, Columnas a eliminar: [&#39;V99&#39;]
+V167, Columnas a eliminar: [&#39;V170&#39;]
+V177, Columnas a eliminar: [&#39;V167&#39;]
+V178, Columnas a eliminar: [&#39;V177&#39;, &#39;V68&#39;]
+V200, Columnas a eliminar: [&#39;V200&#39;]
+V202, Columnas a eliminar: [&#39;V96&#39;, &#39;V106&#39;, &#39;V241&#39;]
+V203, Columnas a eliminar: [&#39;V333&#39;, &#39;V334&#39;, &#39;V337&#39;, &#39;V332&#39;]
+V205, Columnas a eliminar: [&#39;V315&#39;]
+V207, Columnas a eliminar: [&#39;V255&#39;]
+V208, Columnas a eliminar: [&#39;V327&#39;, &#39;V107&#39;]
+V210, Columnas a eliminar: [&#39;V254&#39;, &#39;V208&#39;, &#39;V33&#39;]
+V211, Columnas a eliminar: [&#39;V202&#39;]
+V212, Columnas a eliminar: [&#39;V209&#39;]
+V213, Columnas a eliminar: [&#39;V5&#39;]
+V214, Columnas a eliminar: [&#39;V54&#39;, &#39;V275&#39;, &#39;V214&#39;]
+V232, Columnas a eliminar: [&#39;V232&#39;]
+V234, Columnas a eliminar: [&#39;V223&#39;, &#39;V237&#39;, &#39;V189&#39;]
+V242, Columnas a eliminar: [&#39;V242&#39;]
+V244, Columnas a eliminar: [&#39;V250&#39;]
+V264, Columnas a eliminar: [&#39;V270&#39;, &#39;V40&#39;]
+V268, Columnas a eliminar: [&#39;V44&#39;, &#39;V74&#39;, &#39;V154&#39;]
+V269, Columnas a eliminar: [&#39;V178&#39;, &#39;V287&#39;, &#39;V65&#39;]
+V273, Columnas a eliminar: [&#39;D9&#39;]
+V274, Columnas a eliminar: [&#39;V301&#39;, &#39;V185&#39;, &#39;V91&#39;]
+V276, Columnas a eliminar: [&#39;V197&#39;]
+V277, Columnas a eliminar: [&#39;V119&#39;]
+V278, Columnas a eliminar: [&#39;V125&#39;, &#39;V277&#39;]
+V279, Columnas a eliminar: [&#39;V283&#39;, &#39;V292&#39;]
+V293, Columnas a eliminar: [&#39;V279&#39;]
+V294, Columnas a eliminar: [&#39;V326&#39;]
+V295, Columnas a eliminar: [&#39;V293&#39;]
+V302, Columnas a eliminar: [&#39;V1&#39;]
+V306, Columnas a eliminar: [&#39;id_05&#39;]
+V307, Columnas a eliminar: [&#39;id_04&#39;, &#39;V127&#39;]
+V308, Columnas a eliminar: [&#39;id_09&#39;]
+V309, Columnas a eliminar: [&#39;V238&#39;]
+V311, Columnas a eliminar: [&#39;V3&#39;, &#39;V97&#39;]
+V313, Columnas a eliminar: [&#39;V262&#39;, &#39;V244&#39;, &#39;V294&#39;, &#39;V140&#39;]
+V330, Columnas a eliminar: [&#39;V328&#39;]
+V331, Columnas a eliminar: [&#39;V48&#39;]
+V335, Columnas a eliminar: [&#39;V121&#39;, &#39;V29&#39;]
+V336, Columnas a eliminar: [&#39;V299&#39;]
+V338, Columnas a eliminar: [&#39;id_03&#39;, &#39;V201&#39;, &#39;V259&#39;, &#39;V302&#39;, &#39;V70&#39;, &#39;V38&#39;]
+V339, Columnas a eliminar: [&#39;V7&#39;, &#39;V151&#39;]
+id_01, Columnas a eliminar: [&#39;V28&#39;]
+id_11, Columnas a eliminar: [&#39;V41&#39;]
+id_20, Columnas a eliminar: [&#39;V8&#39;, &#39;addr2&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TransactionID</th>
+      <th>TransactionDT</th>
+      <th>TransactionAmt</th>
+      <th>card1</th>
+      <th>card2</th>
+      <th>card3</th>
+      <th>card5</th>
+      <th>addr1</th>
+      <th>dist1</th>
+      <th>C2</th>
+      <th>...</th>
+      <th>V339</th>
+      <th>id_01</th>
+      <th>id_02</th>
+      <th>id_11</th>
+      <th>id_13</th>
+      <th>id_14</th>
+      <th>id_17</th>
+      <th>id_19</th>
+      <th>id_20</th>
+      <th>id_32</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2987000.0</td>
+      <td>86400.0</td>
+      <td>68.50</td>
+      <td>13926.0</td>
+      <td>361.0</td>
+      <td>150.0</td>
+      <td>142.0</td>
+      <td>315.0</td>
+      <td>19.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2987001.0</td>
+      <td>86401.0</td>
+      <td>29.00</td>
+      <td>2755.0</td>
+      <td>404.0</td>
+      <td>150.0</td>
+      <td>102.0</td>
+      <td>325.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2987002.0</td>
+      <td>86469.0</td>
+      <td>59.00</td>
+      <td>4663.0</td>
+      <td>490.0</td>
+      <td>150.0</td>
+      <td>166.0</td>
+      <td>330.0</td>
+      <td>287.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2987003.0</td>
+      <td>86499.0</td>
+      <td>50.00</td>
+      <td>18132.0</td>
+      <td>567.0</td>
+      <td>150.0</td>
+      <td>117.0</td>
+      <td>476.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2987004.0</td>
+      <td>86506.0</td>
+      <td>50.00</td>
+      <td>4497.0</td>
+      <td>514.0</td>
+      <td>150.0</td>
+      <td>102.0</td>
+      <td>420.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>70787.0</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-480.0</td>
+      <td>166.0</td>
+      <td>542.0</td>
+      <td>144.0</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>590535</th>
+      <td>3577535.0</td>
+      <td>15811047.0</td>
+      <td>49.00</td>
+      <td>6550.0</td>
+      <td>361.0</td>
+      <td>150.0</td>
+      <td>226.0</td>
+      <td>272.0</td>
+      <td>48.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>590536</th>
+      <td>3577536.0</td>
+      <td>15811049.0</td>
+      <td>39.50</td>
+      <td>10444.0</td>
+      <td>225.0</td>
+      <td>150.0</td>
+      <td>224.0</td>
+      <td>204.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>590537</th>
+      <td>3577537.0</td>
+      <td>15811079.0</td>
+      <td>30.95</td>
+      <td>12037.0</td>
+      <td>595.0</td>
+      <td>150.0</td>
+      <td>224.0</td>
+      <td>231.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>590538</th>
+      <td>3577538.0</td>
+      <td>15811088.0</td>
+      <td>117.00</td>
+      <td>7826.0</td>
+      <td>481.0</td>
+      <td>150.0</td>
+      <td>224.0</td>
+      <td>387.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>590539</th>
+      <td>3577539.0</td>
+      <td>15811131.0</td>
+      <td>279.95</td>
+      <td>15066.0</td>
+      <td>170.0</td>
+      <td>150.0</td>
+      <td>102.0</td>
+      <td>299.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>125800.5</td>
+      <td>100.0</td>
+      <td>52.0</td>
+      <td>-300.0</td>
+      <td>166.0</td>
+      <td>341.0</td>
+      <td>472.0</td>
+      <td>24.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>590540 rows × 113 columns</p>
+</div></div></div>
+</div>
+<p>Eliminamos las variables altamente correlaciondas que tengan VIF &gt; 5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full_num</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;df_full_num.csv&#39;</span><span class="p">)</span>
+<span class="n">df_full_num</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_full</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_full_num</span><span class="p">,</span> <span class="n">df_full_cat</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;TransactionID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(590540, 2515)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class1</span> <span class="o">=</span> <span class="n">df_full</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;isFraud == 1&quot;</span><span class="p">)</span>
+<span class="n">class1</span> <span class="o">=</span> <span class="n">class1</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">class1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.03</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">class0</span> <span class="o">=</span> <span class="n">df_full</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;isFraud == 0&quot;</span><span class="p">)</span>
+<span class="n">class0</span> <span class="o">=</span> <span class="n">class0</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">class0</span><span class="p">)</span><span class="o">*</span><span class="mf">0.03</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">indices_class1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">class1</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">indices_class0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">class0</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="n">class1</span> <span class="o">=</span> <span class="n">class1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices_class1</span><span class="p">]</span>
+<span class="n">class0</span> <span class="o">=</span> <span class="n">class0</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices_class0</span><span class="p">]</span>
+
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">class1</span><span class="p">,</span> <span class="n">class0</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_sample</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TransactionID</th>
+      <th>TransactionDT</th>
+      <th>TransactionAmt</th>
+      <th>card1</th>
+      <th>card2</th>
+      <th>card3</th>
+      <th>card5</th>
+      <th>addr1</th>
+      <th>dist1</th>
+      <th>C2</th>
+      <th>...</th>
+      <th>DeviceInfo_verykoolS5019</th>
+      <th>DeviceInfo_verykoolS5524</th>
+      <th>DeviceInfo_verykoolS5525</th>
+      <th>DeviceInfo_verykoolS5530 Build/LMY47I</th>
+      <th>DeviceInfo_verykools4009</th>
+      <th>DeviceInfo_verykools5004</th>
+      <th>DeviceInfo_verykools5034</th>
+      <th>DeviceInfo_verykools5035</th>
+      <th>DeviceInfo_vivo</th>
+      <th>DeviceInfo_xs-Z47b7VqTMxs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3319303.0</td>
+      <td>8185867.0</td>
+      <td>100.000</td>
+      <td>9350.0</td>
+      <td>111.0</td>
+      <td>150.0</td>
+      <td>162.0</td>
+      <td>310.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3388411.0</td>
+      <td>10114406.0</td>
+      <td>47.973</td>
+      <td>9917.0</td>
+      <td>142.0</td>
+      <td>185.0</td>
+      <td>138.0</td>
+      <td>299.0</td>
+      <td>8.0</td>
+      <td>47.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2989598.0</td>
+      <td>147621.0</td>
+      <td>100.000</td>
+      <td>2616.0</td>
+      <td>327.0</td>
+      <td>150.0</td>
+      <td>223.0</td>
+      <td>123.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3357624.0</td>
+      <td>9225325.0</td>
+      <td>33.957</td>
+      <td>15146.0</td>
+      <td>311.0</td>
+      <td>185.0</td>
+      <td>102.0</td>
+      <td>299.0</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3380486.0</td>
+      <td>9879546.0</td>
+      <td>49.786</td>
+      <td>9633.0</td>
+      <td>130.0</td>
+      <td>185.0</td>
+      <td>138.0</td>
+      <td>299.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17710</th>
+      <td>3183455.0</td>
+      <td>4413541.0</td>
+      <td>14.808</td>
+      <td>9366.0</td>
+      <td>555.0</td>
+      <td>119.0</td>
+      <td>137.0</td>
+      <td>299.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17711</th>
+      <td>3074100.0</td>
+      <td>1827776.0</td>
+      <td>150.000</td>
+      <td>16679.0</td>
+      <td>463.0</td>
+      <td>144.0</td>
+      <td>147.0</td>
+      <td>426.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17712</th>
+      <td>3225851.0</td>
+      <td>5627345.0</td>
+      <td>117.000</td>
+      <td>7919.0</td>
+      <td>194.0</td>
+      <td>150.0</td>
+      <td>202.0</td>
+      <td>220.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17713</th>
+      <td>3193950.0</td>
+      <td>4753189.0</td>
+      <td>57.950</td>
+      <td>15847.0</td>
+      <td>216.0</td>
+      <td>150.0</td>
+      <td>226.0</td>
+      <td>225.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17714</th>
+      <td>3258372.0</td>
+      <td>6574366.0</td>
+      <td>57.950</td>
+      <td>2845.0</td>
+      <td>543.0</td>
+      <td>150.0</td>
+      <td>117.0</td>
+      <td>315.0</td>
+      <td>26.0</td>
+      <td>116.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>17715 rows × 2515 columns</p>
+</div></div></div>
+</div>
+<p>Debido a que la cantidad de los datos originales es muy grande, se decide hacer un sample del 3% de los datos para disminuir la dimensionalidad y poder correr todos los modelos con la capacidad de computo disponible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_sample</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;isFraud&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((12400, 2514), (5315, 2514), (12400,), (5315,))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Empezamos a aplicar los modelos de machine learning, usando PipeLine y GridSearchCV con StratifiedKFold para este problema de classificacion desbalanceado y que siempre se tenga en cuenta las dos clases en los modelos. Los modelos se entrenan usando el scorer de AUC y una vez es escogido el mejor modelo se guarda con pickle para no tener que hacer el tunning de los hyperparametros todo el tiempo.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="knn">
+<h1>KNN<a class="headerlink" href="#knn" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_knn</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;knn_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+     <span class="n">grid_knn</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;knn_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+     
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s1">&#39;knn&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;knn__n_neighbors&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="s1">&#39;knn__weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;knn__algorithm&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;ball_tree&#39;</span><span class="p">,</span> <span class="s1">&#39;kd_tree&#39;</span><span class="p">,</span> <span class="s1">&#39;brute&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;knn__p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="n">grid_knn</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_knn</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;knn_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_knn</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_knn</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;knn__algorithm&#39;: &#39;ball_tree&#39;, &#39;knn__n_neighbors&#39;: 1, &#39;knn__p&#39;: 1, &#39;knn__weights&#39;: &#39;uniform&#39;}
+Best score:  0.5888677597830869
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_knn</span> <span class="o">=</span> <span class="n">grid_knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;KNN&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">)}]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9719806763285024, &#39;recall&#39;: 0.9806979918112693, &#39;f1-score&#39;: 0.9763198757763975, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9540921919096895, &#39;macro avg&#39;: {&#39;precision&#39;: 0.6324189095928227, &#39;recall&#39;: 0.6005640496690755, &#39;f1-score&#39;: 0.6139268090538429, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.9482145470292225, &#39;recall&#39;: 0.9540921919096895, &#39;f1-score&#39;: 0.9509557702597858, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ridge">
+<h1>RIDGE<a class="headerlink" href="#ridge" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_ridge</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;ridge_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">grid_ridge</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ridge_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+        
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s1">&#39;ridge&#39;</span><span class="p">,</span> <span class="n">RidgeClassifier</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ridge__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="s1">&#39;ridge__solver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;svd&#39;</span><span class="p">,</span> <span class="s1">&#39;cholesky&#39;</span><span class="p">,</span> <span class="s1">&#39;lsqr&#39;</span><span class="p">,</span> <span class="s1">&#39;sparse_cg&#39;</span><span class="p">,</span> <span class="s1">&#39;sag&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="n">grid_ridge</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_ridge</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ridge_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_ridge</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_ridge</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;ridge__alpha&#39;: 0.01, &#39;ridge__solver&#39;: &#39;auto&#39;}
+Best score:  0.5509264797553717
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_ridge</span> <span class="o">=</span> <span class="n">grid_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_ridge</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;Ridge&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_ridge</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_ridge</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_ridge</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_ridge</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9683951551854656, &#39;recall&#39;: 0.9976603626437902, &#39;f1-score&#39;: 0.9828099491020839, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9663217309501411, &#39;macro avg&#39;: {&#39;precision&#39;: 0.7906491904959586, &#39;recall&#39;: 0.5499054501390994, &#39;f1-score&#39;: 0.5789625782376779, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.955954609773519, &#39;recall&#39;: 0.9663217309501411, &#39;f1-score&#39;: 0.9545444322701818, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}, {&#39;Model&#39;: &#39;Ridge&#39;, &#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;auc&#39;: 0.5499054501390994}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lasso">
+<h1>LASSO<a class="headerlink" href="#lasso" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the same grid search using Lasso Classifier</span>
+<span class="n">grid_lasso</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;lasso_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">grid_lasso</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lasso_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s1">&#39;lasso&#39;</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;lasso__C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="s1">&#39;lasso__penalty&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;lasso__solver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;liblinear&#39;</span><span class="p">]}</span>
+
+    <span class="n">grid_lasso</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_lasso</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lasso_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_lasso</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_lasso</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;lasso__C&#39;: 100, &#39;lasso__penalty&#39;: &#39;l1&#39;, &#39;lasso__solver&#39;: &#39;liblinear&#39;}
+Best score:  0.5894081735050201
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_lasso</span> <span class="o">=</span> <span class="n">grid_lasso</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lasso</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;Lasso&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lasso</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lasso</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lasso</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lasso</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9726838586437441, &#39;recall&#39;: 0.9927861181516865, &#39;f1-score&#39;: 0.9826321883442687, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.5375, &#39;recall&#39;: 0.23118279569892472, &#39;f1-score&#39;: 0.3233082706766917, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9661335841956726, &#39;macro avg&#39;: {&#39;precision&#39;: 0.7550919293218721, &#39;recall&#39;: 0.6119844569253056, &#39;f1-score&#39;: 0.6529702295104802, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.9574544705519782, &#39;recall&#39;: 0.9661335841956726, &#39;f1-score&#39;: 0.9595589524672848, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}, {&#39;Model&#39;: &#39;Ridge&#39;, &#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;auc&#39;: 0.5499054501390994}, {&#39;Model&#39;: &#39;Lasso&#39;, &#39;precision&#39;: 0.5375, &#39;recall&#39;: 0.23118279569892472, &#39;f1-score&#39;: 0.3233082706766917, &#39;auc&#39;: 0.6119844569253057}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="naive-bayes">
+<h1>NAIVE BAYES<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the same grid search using Naive Bayes Classifier</span>
+<span class="n">grid_nb</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;nb_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">grid_nb</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nb_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span> 
+    <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;nb__var_smoothing&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">,</span> <span class="mf">1e-7</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="n">grid_nb</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_nb</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nb_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_nb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_nb</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;nb__var_smoothing&#39;: 1e-05}
+Best score:  0.5351489817297628
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">grid_nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;Naive Bayes&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9669663799843627, &#39;recall&#39;: 0.9645155000974849, &#39;f1-score&#39;: 0.9657393850658857, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.08542713567839195, &#39;recall&#39;: 0.0913978494623656, &#39;f1-score&#39;: 0.0883116883116883, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9339604891815616, &#39;macro avg&#39;: {&#39;precision&#39;: 0.5261967578313773, &#39;recall&#39;: 0.5279566747799253, &#39;f1-score&#39;: 0.527025536688787, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.9361166529023475, &#39;recall&#39;: 0.9339604891815616, &#39;f1-score&#39;: 0.9350335428088244, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}, {&#39;Model&#39;: &#39;Ridge&#39;, &#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;auc&#39;: 0.5499054501390994}, {&#39;Model&#39;: &#39;Lasso&#39;, &#39;precision&#39;: 0.5375, &#39;recall&#39;: 0.23118279569892472, &#39;f1-score&#39;: 0.3233082706766917, &#39;auc&#39;: 0.6119844569253057}, {&#39;Model&#39;: &#39;Naive Bayes&#39;, &#39;precision&#39;: 0.08542713567839195, &#39;recall&#39;: 0.0913978494623656, &#39;f1-score&#39;: 0.0883116883116883, &#39;auc&#39;: 0.5279566747799253}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="xgboost">
+<h1>XGBOOST<a class="headerlink" href="#xgboost" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the same grid search using XGBoost Classifier</span>
+<span class="n">grid_xgb</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;xgb_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">grid_xgb</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;xgb_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span> 
+    <span class="p">(</span><span class="s1">&#39;xgb&#39;</span><span class="p">,</span> <span class="n">GradientBoostingClassifier</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;xgb__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s1">&#39;xgb__learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+    <span class="s1">&#39;xgb__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="n">grid_xgb</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_xgb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_xgb</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;xgb_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_xgb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_xgb</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;xgb__learning_rate&#39;: 0.1, &#39;xgb__max_depth&#39;: 5, &#39;xgb__n_estimators&#39;: 200}
+Best score:  0.6453275471402342
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_xgb</span> <span class="o">=</span> <span class="n">grid_xgb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9736389684813753, &#39;recall&#39;: 0.9937609670501072, &#39;f1-score&#39;: 0.9835970667695871, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.6, &#39;recall&#39;: 0.25806451612903225, &#39;f1-score&#39;: 0.3609022556390977, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9680150517403575, &#39;macro avg&#39;: {&#39;precision&#39;: 0.7868194842406877, &#39;recall&#39;: 0.6259127415895698, &#39;f1-score&#39;: 0.6722496612043425, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.9605633620585088, &#39;recall&#39;: 0.9680150517403575, &#39;f1-score&#39;: 0.9618056773302135, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}, {&#39;Model&#39;: &#39;Ridge&#39;, &#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;auc&#39;: 0.5499054501390994}, {&#39;Model&#39;: &#39;Lasso&#39;, &#39;precision&#39;: 0.5375, &#39;recall&#39;: 0.23118279569892472, &#39;f1-score&#39;: 0.3233082706766917, &#39;auc&#39;: 0.6119844569253057}, {&#39;Model&#39;: &#39;Naive Bayes&#39;, &#39;precision&#39;: 0.08542713567839195, &#39;recall&#39;: 0.0913978494623656, &#39;f1-score&#39;: 0.0883116883116883, &#39;auc&#39;: 0.5279566747799253}, {&#39;Model&#39;: &#39;XGBoost&#39;, &#39;precision&#39;: 0.6, &#39;recall&#39;: 0.25806451612903225, &#39;f1-score&#39;: 0.3609022556390977, &#39;auc&#39;: 0.6259127415895697}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="svm">
+<h1>SVM<a class="headerlink" href="#svm" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the same grid search using SVM Classifier</span>
+<span class="n">grid_svm</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;svm_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">grid_svm</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;svm_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s1">&#39;svm&#39;</span><span class="p">,</span> <span class="n">SVC</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;svm__C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s1">&#39;svm__kernel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="s1">&#39;poly&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;svm__gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;scale&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="n">grid_svm</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_svm</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;svm_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_svm</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_svm</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;svm__C&#39;: 0.1, &#39;svm__gamma&#39;: 1, &#39;svm__kernel&#39;: &#39;poly&#39;}
+Best score:  0.6150370076777703
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_svm</span> <span class="o">=</span> <span class="n">grid_svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;SVM&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9737914967967385, &#39;recall&#39;: 0.9779684148956912, &#39;f1-score&#39;: 0.9758754863813229, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.31097560975609756, &#39;recall&#39;: 0.27419354838709675, &#39;f1-score&#39;: 0.2914285714285714, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9533396048918156, &#39;macro avg&#39;: {&#39;precision&#39;: 0.642383553276418, &#39;recall&#39;: 0.6260809816413939, &#39;f1-score&#39;: 0.6336520289049472, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.950596058416765, &#39;recall&#39;: 0.9533396048918156, &#39;f1-score&#39;: 0.951923063769618, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}, {&#39;Model&#39;: &#39;Ridge&#39;, &#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;auc&#39;: 0.5499054501390994}, {&#39;Model&#39;: &#39;Lasso&#39;, &#39;precision&#39;: 0.5375, &#39;recall&#39;: 0.23118279569892472, &#39;f1-score&#39;: 0.3233082706766917, &#39;auc&#39;: 0.6119844569253057}, {&#39;Model&#39;: &#39;Naive Bayes&#39;, &#39;precision&#39;: 0.08542713567839195, &#39;recall&#39;: 0.0913978494623656, &#39;f1-score&#39;: 0.0883116883116883, &#39;auc&#39;: 0.5279566747799253}, {&#39;Model&#39;: &#39;XGBoost&#39;, &#39;precision&#39;: 0.6, &#39;recall&#39;: 0.25806451612903225, &#39;f1-score&#39;: 0.3609022556390977, &#39;auc&#39;: 0.6259127415895697}, {&#39;Model&#39;: &#39;SVM&#39;, &#39;precision&#39;: 0.31097560975609756, &#39;recall&#39;: 0.27419354838709675, &#39;f1-score&#39;: 0.2914285714285714, &#39;auc&#39;: 0.626080981641394}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mlp">
+<h1>MLP<a class="headerlink" href="#mlp" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the same grid search using MLP Classifier</span>
+<span class="n">grid_mlp</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;mlp_model_class.pkl&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">grid_mlp</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mlp_model_class.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    
+    <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s1">&#39;mlp&#39;</span><span class="p">,</span> <span class="n">MLPClassifier</span><span class="p">())])</span>
+    
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;mlp__hidden_layer_sizes&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">20</span><span class="p">,)],</span>
+    <span class="s1">&#39;mlp__activation&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="s1">&#39;relu&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;mlp__solver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;adam&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;mlp__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+    <span class="p">}</span>
+
+    <span class="n">grid_mlp</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># Export model to pickle</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">grid_mlp</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mlp_model_class.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters: &quot;</span><span class="p">,</span> <span class="n">grid_mlp</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span> <span class="n">grid_mlp</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameters:  {&#39;mlp__activation&#39;: &#39;relu&#39;, &#39;mlp__alpha&#39;: 0.0001, &#39;mlp__hidden_layer_sizes&#39;: (10, 30, 10), &#39;mlp__solver&#39;: &#39;adam&#39;}
+Best score:  0.5993172450718208
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with precisssion, recall, f1-score and AUC</span>
+<span class="n">y_pred_mlp</span> <span class="o">=</span> <span class="n">grid_mlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mlp</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Model&quot;</span><span class="p">:</span><span class="s1">&#39;MLP&#39;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">:</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mlp</span><span class="p">),</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mlp</span><span class="p">),</span>
+                    <span class="s2">&quot;f1-score&quot;</span><span class="p">:</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mlp</span><span class="p">),</span> <span class="s2">&quot;auc&quot;</span><span class="p">:</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mlp</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: {&#39;precision&#39;: 0.9719144058081773, &#39;recall&#39;: 0.9918112692532658, &#39;f1-score&#39;: 0.9817620380198785, &#39;support&#39;: 5129.0}, &#39;1&#39;: {&#39;precision&#39;: 0.48148148148148145, &#39;recall&#39;: 0.20967741935483872, &#39;f1-score&#39;: 0.29213483146067415, &#39;support&#39;: 186.0}, &#39;accuracy&#39;: 0.9644402634054563, &#39;macro avg&#39;: {&#39;precision&#39;: 0.7266979436448294, &#39;recall&#39;: 0.6007443443040522, &#39;f1-score&#39;: 0.6369484347402763, &#39;support&#39;: 5315.0}, &#39;weighted avg&#39;: {&#39;precision&#39;: 0.9547515602908179, &#39;recall&#39;: 0.9644402634054563, &#39;f1-score&#39;: 0.9576283295683241, &#39;support&#39;: 5315.0}}
+[{&#39;Model&#39;: &#39;KNN&#39;, &#39;precision&#39;: 0.29285714285714287, &#39;recall&#39;: 0.22043010752688172, &#39;f1-score&#39;: 0.25153374233128833, &#39;auc&#39;: 0.6005640496690755}, {&#39;Model&#39;: &#39;Ridge&#39;, &#39;precision&#39;: 0.6129032258064516, &#39;recall&#39;: 0.10215053763440861, &#39;f1-score&#39;: 0.1751152073732719, &#39;auc&#39;: 0.5499054501390994}, {&#39;Model&#39;: &#39;Lasso&#39;, &#39;precision&#39;: 0.5375, &#39;recall&#39;: 0.23118279569892472, &#39;f1-score&#39;: 0.3233082706766917, &#39;auc&#39;: 0.6119844569253057}, {&#39;Model&#39;: &#39;Naive Bayes&#39;, &#39;precision&#39;: 0.08542713567839195, &#39;recall&#39;: 0.0913978494623656, &#39;f1-score&#39;: 0.0883116883116883, &#39;auc&#39;: 0.5279566747799253}, {&#39;Model&#39;: &#39;XGBoost&#39;, &#39;precision&#39;: 0.6, &#39;recall&#39;: 0.25806451612903225, &#39;f1-score&#39;: 0.3609022556390977, &#39;auc&#39;: 0.6259127415895697}, {&#39;Model&#39;: &#39;SVM&#39;, &#39;precision&#39;: 0.31097560975609756, &#39;recall&#39;: 0.27419354838709675, &#39;f1-score&#39;: 0.2914285714285714, &#39;auc&#39;: 0.626080981641394}, {&#39;Model&#39;: &#39;MLP&#39;, &#39;precision&#39;: 0.48148148148148145, &#39;recall&#39;: 0.20967741935483872, &#39;f1-score&#39;: 0.29213483146067415, &#39;auc&#39;: 0.6007443443040523}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1-score</th>
+      <th>auc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>KNN</td>
+      <td>0.292857</td>
+      <td>0.220430</td>
+      <td>0.251534</td>
+      <td>0.600564</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ridge</td>
+      <td>0.612903</td>
+      <td>0.102151</td>
+      <td>0.175115</td>
+      <td>0.549905</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lasso</td>
+      <td>0.537500</td>
+      <td>0.231183</td>
+      <td>0.323308</td>
+      <td>0.611984</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Naive Bayes</td>
+      <td>0.085427</td>
+      <td>0.091398</td>
+      <td>0.088312</td>
+      <td>0.527957</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>XGBoost</td>
+      <td>0.600000</td>
+      <td>0.258065</td>
+      <td>0.360902</td>
+      <td>0.625913</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>SVM</td>
+      <td>0.310976</td>
+      <td>0.274194</td>
+      <td>0.291429</td>
+      <td>0.626081</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>MLP</td>
+      <td>0.481481</td>
+      <td>0.209677</td>
+      <td>0.292135</td>
+      <td>0.600744</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>De los resultados podemos concluir que el mejor modelo es XGBoost con un AUC de 62.25%, cercano a este esta SVM y LASSO. Todos los valores de AUC estan entre 0.5 y 0.6, estos son los mas altos porque el scoring del modelo se enfoco en esta metrica. Cuando revisamos las otras metricas vemos malos resultados para algunos modelos. El recall y el f1-score obtienen valores de 0.1 a 0.3, muy bajitos, lo cual se debe a que el dataset se encuentra desbalanceado. La metrica de precision tiene un rango de valores de 0.2 y 0.6, solo 3 modelos tienen valores superiores a 0.5, esta tambien se ve afectada por el desbalanceo de las clases. Se podrian tener mejores resultados al aplicar tecnicas de balanceo de datos. Se puede concluir que el mejor modelo evidentemente logra ser XGBoost obteniendo el maximo AUC y los valores de las otras metricas alto respecto a los otros modelos. S</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parcial Machine Learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="parcialml_regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">WIND SPEED PROBLEM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FRAUD PROBLEM</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge">RIDGE</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lasso">LASSO</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">NAIVE BAYES</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#xgboost">XGBOOST</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mlp">MLP</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dariela Castro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
